@@ -44,11 +44,9 @@ function acl_add_user_role_on_subscription_status_active( $subscription ) {
 
     // Define the mapping of subscription IDs to user roles
     $subscription_role_mapping = array(
-        '4904' => 'directory_member', // Directory Annual
-        '4847' => 'directory_member', // Directory Monthly
-        '4902' => 'full_member', // Full Member Annual
-        '4901' => 'full_member', // Full Member Six Monthly
-        '4846' => 'full_member', // Full Member Monthly
+        'product1' => 'role1', // Product and Role 1
+        'product2' => 'role2', // Product and Role 2
+        //Add as many as you like
     );
 
     // Loop through the subscription items to find the purchased product
@@ -80,11 +78,9 @@ function acl_remove_user_role_on_subscription_status_changed( $subscription ) {
 
     // Define the mapping of subscription IDs to user roles
     $subscription_role_mapping = array(
-        '4904' => 'directory_member', // Directory Annual
-        '4847' => 'directory_member', // Directory Monthly
-        '4902' => 'full_member', // Full Member Annual
-        '4901' => 'full_member', // Full Member Six Monthly
-        '4846' => 'full_member', // Full Member Monthly
+        'product1' => 'role1', // Product and Role 1
+        'product2' => 'role2', // Product and Role 2
+        //Add as many as you like
     );
 
     // Loop through the subscription items to find the purchased product
@@ -107,7 +103,7 @@ function acl_remove_user_role_on_subscription_status_changed( $subscription ) {
 
 
 function acl_set_gd_place_posts_to_pending( $user_id ) {
-    // Get all gd_place posts owned by the user
+    // Get all gd_place posts owned by the user - this can be modified for any for posttype
     $args = array(
         'post_type'      => 'gd_place',
         'post_status'    => 'publish',
